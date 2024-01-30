@@ -1,8 +1,7 @@
 #include <stdio.h>
 
-// Function to partition the array and return the pivot index
 int partition(int arr[], int low, int high) {
-    int pivot = arr[low]; // Choosing the first element as the pivot
+    int pivot = arr[low];
     int i = low;
     int j = high;
 
@@ -38,7 +37,6 @@ void quickSort(int arr[], int low, int high) {
     }
 }
 
-// Utility function to print the elements of an array
 void printArray(int arr[], int size) {
     for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
