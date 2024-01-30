@@ -1,28 +1,28 @@
 #include <stdio.h>
 
-// Function to partition the array and return the pivot index
 int partition(int arr[], int low, int high) {
-    int pivot = arr[low]; // Choosing the first element as the pivot
-    int i = low + 1;
+    int pivot = arr[low];
+    int i = low;
     int j = high;
 
-    while (1) {
-        while (i <= j && arr[i] <= pivot) {
-            i++;
+        while (i <= j ) {
+            while(arr[i] <= pivot)
+            {
+                i++;
+            }
+            while (arr[j] > pivot) 
+            {
+                j--;
+            }
+            if (i <= j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;  
         }
-        while (j >= i && arr[j] > pivot) {
-            j--;
         }
-        if (i >= j) {
-            break;
-        }
-        // Swap elements
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
+       
+        
 
-    // Swap pivot with j
     int temp = arr[low];
     arr[low] = arr[j];
     arr[j] = temp;
@@ -30,7 +30,6 @@ int partition(int arr[], int low, int high) {
     return j;
 }
 
-// Function to perform Quick Sort
 void quickSort(int arr[], int low, int high) {
     if (low < high) {
         int pivotIndex = partition(arr, low, high);
@@ -39,7 +38,6 @@ void quickSort(int arr[], int low, int high) {
     }
 }
 
-// Utility function to print the elements of an array
 void printArray(int arr[], int size) {
     for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
